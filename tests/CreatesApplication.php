@@ -4,19 +4,18 @@ namespace Tests;
 
 use Illuminate\Contracts\Console\Kernel;
 
-trait CreatesApplication
-{
-    /**
-     * Creates the application.
-     *
-     * @return \Illuminate\Foundation\Application
-     */
-    public function createApplication()
-    {
-        $app = require __DIR__.'/../bootstrap/app.php';
+trait CreatesApplication {
 
-        $app->make(Kernel::class)->bootstrap();
+	/**
+	 * Creates the application.
+	 *
+	 * @return \Illuminate\Foundation\Application
+	 */
+	public function createApplication() {
+		$app = require __DIR__ . '/../bootstrap/app.php';
 
-        return $app;
-    }
+		$app->make( Kernel::class )->bootstrap();
+
+		return $app;
+	}
 }
