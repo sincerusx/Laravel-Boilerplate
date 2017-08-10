@@ -16,7 +16,7 @@ $factory->define(App\Models\User::class, function(Faker\Generator $faker){
 
 	return [
 		'username'       => $faker->userName,
-		'password'       => md5('secret'),
+		'password'       => bcrypt('secret'),
 		'email'          => $faker->unique()->safeEmail,
 		'activated'      => 1,
 		'isReal'         => (string)0,
