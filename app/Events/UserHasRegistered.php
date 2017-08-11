@@ -7,9 +7,8 @@ use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class UserRegistered
+class UserHasRegistered
 {
-
 	use Dispatchable, InteractsWithSockets, SerializesModels;
 
 	/**

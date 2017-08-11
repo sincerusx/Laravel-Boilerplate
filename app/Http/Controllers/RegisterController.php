@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Events\UserRegistered;
+use App\Events\UserHasRegistered;
 use App\Http\Requests\RegisterValidation;
 use App\Models\User;
 use Auth;
@@ -35,13 +35,15 @@ class RegisterController extends Controller
 			'username' => $request->input('username'),
 			'password' => $request->input('password'),
 			'email'    => $request->input('email'),
-		]);
+		 ]);
+
+		// fire event
+		event(new UserHasRegistered($user));
 
 		// log user in
 		Auth::guard()->login($user);
 
-		// fire event
-		event(new UserRegistered($user));
+		$user->notify();
 
 		return redirect('/');
 	}

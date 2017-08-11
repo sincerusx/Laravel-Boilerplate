@@ -32,7 +32,7 @@ class WelcomeMail extends Mailable
 	 */
 	public function build()
 	{
-		$this->subject('Welcome to '.ucfirst( config('app.name') ) );
-		return $this->markdown('emails.user.welcome');
+		return $this->subject('Welcome to '.ucfirst( config('app.name') ) )->markdown('emails.user.welcome');
+
 	}
 }
