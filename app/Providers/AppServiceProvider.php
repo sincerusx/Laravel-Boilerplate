@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
+use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
 
 class AppServiceProvider extends ServiceProvider {
 
@@ -13,7 +14,7 @@ class AppServiceProvider extends ServiceProvider {
 	 * @return void
 	 */
 	public function boot() {
-		Schema::defaultStringLength( 254 );
+		Schema::defaultStringLength( 191 );
 	}
 
 	/**
@@ -23,7 +24,7 @@ class AppServiceProvider extends ServiceProvider {
 	 */
 	public function register() {
 		if ( $this->app->environment() !== 'production' ) {
-			$this->app->register( \Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class );
+			$this->app->register( IdeHelperServiceProvider::class );
 		}
 	}
 }
