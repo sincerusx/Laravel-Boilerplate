@@ -6,14 +6,16 @@ use App\Http\Requests\RegisterValidation;
 use App\Models\User;
 use Auth;
 
-class RegisterController extends Controller {
+class RegisterController extends Controller
+{
 
 	/**
 	 * Show the application registration form.
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function showRegistrationForm(){
+	public function showRegistrationForm()
+	{
 		return view('auth.register');
 	}
 
@@ -24,7 +26,8 @@ class RegisterController extends Controller {
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function register(RegisterValidation $request){
+	public function register(RegisterValidation $request)
+	{
 
 		/** @var User $user */
 		$user = User::create([
